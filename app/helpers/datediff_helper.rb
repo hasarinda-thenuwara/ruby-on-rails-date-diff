@@ -1,0 +1,2 @@
+module DatediffHelper
+end
