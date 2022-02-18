@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @date_difference %>
+
+<div>
+  <%= link_to "Edit this date difference", edit_date_difference_path(@date_difference) %> |
+  <%= link_to "Back to date differences", date_differences_path %>
+
+  <%= button_to "Destroy this date difference", @date_difference, method: :delete %>
+</div>

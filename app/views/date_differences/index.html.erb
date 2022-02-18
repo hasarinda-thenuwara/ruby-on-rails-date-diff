@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Date differences</h1>
+
+<div id="date_differences">
+  <% @date_differences.each do |date_difference| %>
+    <%= render date_difference %>
+    <p>
+      <%= link_to "Show this date difference", date_difference %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New date difference", new_date_difference_path %>

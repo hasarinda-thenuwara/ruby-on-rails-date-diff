@@ -1,0 +1,46 @@
+<%= form_with(model: date_difference) do |form| %>
+  <% if date_difference.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(date_difference.errors.count, "error") %> prohibited this date_difference from being saved:</h2>
+
+      <ul>
+        <% date_difference.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :date1, style: "display: block" %>
+    <%= form.text_field :date1 %>
+  </div>
+
+  <div>
+    <%= form.label :date2, style: "display: block" %>
+    <%= form.text_field :date2 %>
+  </div>
+
+  <div class='input-group date' id='datetimepicker1'>
+    <input type='text' class="form-control" />
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+  </div>
+  <div class='input-group date' id='datetimepicker2'>
+    <input type='text' class="form-control" />
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+  </div>
+  <script type="text/javascript">
+    (function () {
+      document.getElementById('datetimepicker1').datetimepicker();
+      document.getElementById('datetimepicker2').datetimepicker();
+    })();
+  </script>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
